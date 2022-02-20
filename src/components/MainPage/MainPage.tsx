@@ -7,6 +7,7 @@ import checkUser from '../../HOC/LoginHoc';
 const MainPage: React.FC = () => {
     // @ts-ignore
     const {news} = useContext(NewsContext);
+    console.log(news);
     return (
         <div>
             <StHeadOne>News App 👋</StHeadOne>

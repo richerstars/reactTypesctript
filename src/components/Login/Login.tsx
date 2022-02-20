@@ -9,11 +9,11 @@ import { NEWS_PAGE } from '../../constants/url';
 const Login: React.FC = () => {
     const navigate = useNavigate();
     const [login, setLogin] = useState('')
-    // @ts-ignore
     const {setUser} = useContext(LoginContext);
 
     const submitForm = (e: React.SyntheticEvent) => {
         e.preventDefault();
+        // @ts-ignore
         setUser(login)
         navigate(NEWS_PAGE);
     }

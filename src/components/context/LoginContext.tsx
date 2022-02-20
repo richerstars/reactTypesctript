@@ -6,10 +6,14 @@ type TProps = {
 
 type TUser = {
     user: string,
-    setUser : any,
+    setUser?: ()=>void,
 }
 
-export const LoginContext = React.createContext('');
+const defaultState = {
+    user: ''
+};
+
+export const LoginContext = React.createContext<TUser>(defaultState);
 
 const LoginProvider: React.FC<TProps> = ({children}) => {
     const [user, setUser] = useState('');

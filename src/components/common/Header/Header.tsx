@@ -4,7 +4,6 @@ import NavBar from '../NavBar/NavBar';
 import { StHeader, StUserMenu } from './styled';
 
 const Header: React.FC = () => {
-    // @ts-ignore
     const {user} = React.useContext(LoginContext);
     return (
         <StHeader>
