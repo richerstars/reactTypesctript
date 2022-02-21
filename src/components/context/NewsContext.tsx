@@ -27,8 +27,18 @@ type TState = {
     oneNews?: TNews | null,
 }
 
-export const NewsContext = createContext(null);
+const defaultState = {
+    news: [],
+    oneNews: null,
+    setSingleNews: ()=>{}
+};
 
+type TContext = {
+    setSingleNews: (value: string) => void
+} & TState
+
+
+export const NewsContext = createContext<TContext>(defaultState);
 export const NewsContextProvider: React.FC<TProps> = ({children}) => {
     const [data, setData] = useState<TState>({news:[], oneNews: null});
 
@@ -54,7 +64,6 @@ export const NewsContextProvider: React.FC<TProps> = ({children}) => {
     }
 
 
-    // @ts-ignore
     return <NewsContext.Provider value={value}>
         {children}
     </NewsContext.Provider>

@@ -5,7 +5,7 @@ import { StHeadOne, StLoading, StNews } from './styled';
 import withCheckUser from '../../HOC/withCheckUser';
 
 const MainPage: React.FC = () => {
-    // @ts-ignore
+
     const {news} = useContext(NewsContext);
     return (
         <div>

@@ -9,7 +9,7 @@ type TProps = {
 };
 
 const NewsPage: React.FC<TProps> = ({data}) => {
-    // @ts-ignore
+
     const {setSingleNews} = React.useContext(NewsContext);
     const onClickHandler = () => setSingleNews(data.publishedAt);
 
