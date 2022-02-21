@@ -22,10 +22,15 @@ export type TNews ={
     content: string | null,
 };
 
+type TState = {
+    news: Array<TNews>,
+    oneNews?: TNews | null,
+}
+
 export const NewsContext = createContext(null);
 
 export const NewsContextProvider: React.FC<TProps> = ({children}) => {
-    const [data, setData] = useState({news:[], oneNews: null});
+    const [data, setData] = useState<TState>({news:[], oneNews: null});
 
     const getNews = async() => {
         try {
@@ -39,7 +44,7 @@ export const NewsContextProvider: React.FC<TProps> = ({children}) => {
         getNews();
     }, []);
 
-    // @ts-ignore
+
     const setSingleNews = (marker: string) => setData((prevState) => ({...prevState,
         oneNews: prevState.news.find((oneNews: TNews) => oneNews.publishedAt === marker )}));
 

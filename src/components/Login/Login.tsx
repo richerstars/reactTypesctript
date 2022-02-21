@@ -13,8 +13,9 @@ const Login: React.FC = () => {
 
     const submitForm = (e: React.SyntheticEvent) => {
         e.preventDefault();
-        // @ts-ignore
-        setUser(login)
+        if (setUser) {
+            setUser(login)
+        }
         navigate(NEWS_PAGE);
     }
 

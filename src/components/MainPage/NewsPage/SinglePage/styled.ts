@@ -21,6 +21,6 @@ export const StAuth = styled.div`
   margin-right: -200px;
 `;
 export const StImage = styled.img`
-  width: 100%;
+  width: 800px;
   height: 350px;
 `;

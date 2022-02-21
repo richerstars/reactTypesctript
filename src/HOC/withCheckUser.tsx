@@ -3,7 +3,7 @@ import {Navigate } from "react-router";
 import { LoginContext } from '../components/context/LoginContext';
 import { DEFAULT_PAGE } from '../constants/url';
 
-const checkUser = (Component: React.FC) => () => {
+const withCheckUser = (Component: React.FC) => () => {
     // @ts-ignore
     const {user} = useContext(LoginContext);
     return user
@@ -11,4 +11,4 @@ const checkUser = (Component: React.FC) => () => {
         : <Navigate  to={DEFAULT_PAGE}/>;
 };
 
-export default checkUser;
+export default withCheckUser;

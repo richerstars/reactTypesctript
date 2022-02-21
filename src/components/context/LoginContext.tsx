@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 
 type TProps = {
     children: React.ReactNode
@@ -6,7 +6,7 @@ type TProps = {
 
 type TUser = {
     user: string,
-    setUser?: ()=>void,
+    setUser?: Dispatch<SetStateAction<string>>,
 }
 
 const defaultState = {
@@ -22,7 +22,6 @@ const LoginProvider: React.FC<TProps> = ({children}) => {
         setUser
     };
 
-    // @ts-ignore
     return <LoginContext.Provider value={value}>
         {children}
     </LoginContext.Provider>;

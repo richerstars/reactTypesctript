@@ -2,12 +2,11 @@ import React, { useContext } from 'react';
 import { NewsContext, TNews } from '../context/NewsContext';
 import NewsPage from './NewsPage/NewsPage';
 import { StHeadOne, StLoading, StNews } from './styled';
-import checkUser from '../../HOC/LoginHoc';
+import withCheckUser from '../../HOC/withCheckUser';
 
 const MainPage: React.FC = () => {
     // @ts-ignore
     const {news} = useContext(NewsContext);
-    console.log(news);
     return (
         <div>
             <StHeadOne>News App 👋</StHeadOne>
@@ -22,4 +21,4 @@ const MainPage: React.FC = () => {
     );
 };
 
-export default checkUser(MainPage);
+export default withCheckUser(MainPage);
